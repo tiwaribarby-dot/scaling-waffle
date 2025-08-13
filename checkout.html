@@ -1,0 +1,370 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Cricket Secret</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="logo.png" alt="Cricket Secret" onerror="this.style.display='none'">
+                <strong>Cricket Secret</strong>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="products.html">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+
+                <ul class="navbar-nav">
+                    <li class="nav-item position-relative">
+                        <a class="nav-link" href="cart.html">
+                            <i class="fas fa-shopping-cart"></i> Cart
+                            <span class="cart-badge" id="cart-count" style="display: none;">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container my-5">
+        <div id="flash-messages"></div>
+        
+        <h2 class="mb-4">Checkout</h2>
+        
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0">Billing Information</h5>
+                    </div>
+                    <div class="card-body">
+                        <form id="checkout-form">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Full Name</label>
+                                    <input type="text" class="form-control" name="name" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Email</label>
+                                    <input type="email" class="form-control" name="email" required>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label class="form-label">Phone</label>
+                                <input type="tel" class="form-control" name="phone" required>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Address Line 1</label>
+                                    <input type="text" class="form-control" name="address_line1" placeholder="House/Flat No., Building Name" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Address Line 2</label>
+                                    <input type="text" class="form-control" name="address_line2" placeholder="Street, Area, Locality">
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-md-4 mb-3">
+                                    <label class="form-label">City</label>
+                                    <input type="text" class="form-control" name="city" required>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <label class="form-label">State</label>
+                                    <input type="text" class="form-control" name="state" required>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <label class="form-label">PIN Code</label>
+                                    <input type="text" class="form-control" name="pincode" pattern="[0-9]{6}" maxlength="6" required>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label class="form-label">Payment Method</label>
+                                <div class="payment-methods">
+                                    <div class="form-check payment-option mb-3">
+                                        <input class="form-check-input" type="radio" name="payment_method" value="razorpay" id="razorpay">
+                                        <label class="form-check-label payment-label" for="razorpay">
+                                            <div class="d-flex align-items-center">
+                                                <i class="fas fa-credit-card fa-2x text-primary me-3"></i>
+                                                <div>
+                                                    <strong>Online Payment</strong>
+                                                    <br><small class="text-muted">Pay securely with Razorpay - Credit/Debit Cards, Net Banking, UPI</small>
+                                                </div>
+                                            </div>
+                                        </label>
+                                    </div>
+                                    <div class="form-check payment-option">
+                                        <input class="form-check-input" type="radio" name="payment_method" value="cod" id="cod">
+                                        <label class="form-check-label payment-label" for="cod">
+                                            <div class="d-flex align-items-center">
+                                                <i class="fas fa-money-bill-wave fa-2x text-success me-3"></i>
+                                                <div>
+                                                    <strong>Cash on Delivery</strong>
+                                                    <br><small class="text-muted">Pay when your order is delivered - ₹50 COD charges apply</small>
+                                                </div>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary btn-lg">Proceed to Payment</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0">Order Summary</h5>
+                    </div>
+                    <div class="card-body" id="order-summary">
+                        <!-- Order summary will be populated by JavaScript -->
+                    </div>
+                </div>
+                
+                <div class="card mt-3">
+                    <div class="card-body">
+                        <h6>Payment Methods Accepted</h6>
+                        <div class="d-flex gap-2 mt-2">
+                            <i class="fab fa-cc-visa fa-2x text-primary"></i>
+                            <i class="fab fa-cc-mastercard fa-2x text-primary"></i>
+                            <i class="fas fa-university fa-2x text-primary"></i>
+                            <i class="fas fa-mobile-alt fa-2x text-primary"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Payment Modal -->
+    <div class="modal fade" id="paymentModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title"><i class="fas fa-credit-card me-2"></i>Secure Payment</h5>
+                </div>
+                <div class="modal-body text-center p-5">
+                    <div class="mb-4">
+                        <i class="fas fa-shield-alt fa-3x text-success mb-3"></i>
+                        <h4>Complete Your Order</h4>
+                        <p class="text-muted">Secure payment powered by Razorpay</p>
+                    </div>
+                    
+                    <div class="order-summary mb-4 p-3 bg-light rounded">
+                        <h5>Order Total: <span class="text-primary" id="modal-total">₹0.00</span></h5>
+                    </div>
+                    
+                    <button id="rzp-button1" class="btn btn-success btn-lg">
+                        <i class="fas fa-lock me-2"></i>Pay Now <span id="pay-amount">₹0.00</span>
+                    </button>
+                    
+                    <div class="mt-3">
+                        <small class="text-muted d-block">
+                            <i class="fas fa-shield-alt me-1"></i>
+                            Your payment is secured with 256-bit SSL encryption
+                        </small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5>Cricket Secret</h5>
+                    <p class="text-muted">Crafting premium cricket bats with precision and passion.</p>
+                </div>
+                <div class="col-lg-8">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <h6>Quick Links</h6>
+                            <ul class="list-unstyled">
+                                <li><a href="about.html">About</a></li>
+                                <li><a href="contact.html">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        let orderData = {};
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            loadOrderSummary();
+            
+            document.getElementById('checkout-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                processCheckout();
+            });
+        });
+        
+        function loadOrderSummary() {
+            const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+            const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            
+            if (cart.length === 0) {
+                showFlashMessage('Your cart is empty!', 'warning');
+                setTimeout(() => {
+                    window.location.href = 'products.html';
+                }, 2000);
+                return;
+            }
+            
+            let summaryHTML = '';
+            cart.forEach(item => {
+                summaryHTML += `
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <div>
+                            <small>${item.name}</small><br>
+                            <small class="text-muted">Qty: ${item.quantity}</small>
+                        </div>
+                        <span>₹${(item.price * item.quantity).toFixed(2)}</span>
+                    </div>
+                `;
+            });
+            
+            summaryHTML += `
+                <hr>
+                <div class="d-flex justify-content-between mb-2">
+                    <span>Subtotal:</span>
+                    <span>₹${total.toLocaleString('en-IN')}</span>
+                </div>
+                <div class="d-flex justify-content-between mb-2">
+                    <span>Shipping:</span>
+                    <span>Free</span>
+                </div>
+                <div class="d-flex justify-content-between mb-2" id="cod-charges" style="display: none;">
+                    <span>COD Charges:</span>
+                    <span>₹50</span>
+                </div>
+                <hr>
+                <div class="d-flex justify-content-between">
+                    <strong>Total:</strong>
+                    <strong class="text-primary" id="final-total">₹${total.toLocaleString('en-IN')}</strong>
+                </div>
+            `;
+            
+            document.getElementById('order-summary').innerHTML = summaryHTML;
+        }
+        
+        function processCheckout() {
+            const formData = new FormData(document.getElementById('checkout-form'));
+            const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+            let total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            
+            const customerData = {
+                name: formData.get('name'),
+                email: formData.get('email'),
+                phone: formData.get('phone'),
+                address_line1: formData.get('address_line1'),
+                address_line2: formData.get('address_line2'),
+                city: formData.get('city'),
+                state: formData.get('state'),
+                pincode: formData.get('pincode'),
+                payment_method: formData.get('payment_method')
+            };
+            
+            // Validate payment method selection
+            if (!customerData.payment_method) {
+                showFlashMessage('Please select a payment method.', 'error');
+                return;
+            }
+            
+            // Build full address
+            const fullAddress = `${customerData.address_line1}, ${customerData.address_line2 ? customerData.address_line2 + ', ' : ''}${customerData.city}, ${customerData.state} - ${customerData.pincode}`;
+            customerData.full_address = fullAddress;
+            
+            if (customerData.payment_method === 'cod') {
+                // Add COD charges
+                total += 50;
+                customerData.cod_charges = 50;
+                
+                // Handle Cash on Delivery
+                processCODOrder(customerData);
+                
+            } else if (customerData.payment_method === 'razorpay') {
+                // Handle Razorpay payment
+                orderData = {
+                    id: 'order_' + Date.now(),
+                    amount: Math.round(total * 100), // Amount in paise
+                    customer_name: customerData.name,
+                    customer_email: customerData.email,
+                    customer_phone: customerData.phone,
+                    customer: customerData
+                };
+                
+                document.getElementById('modal-total').textContent = '₹' + total.toLocaleString('en-IN');
+                document.getElementById('pay-amount').textContent = '₹' + total.toLocaleString('en-IN');
+                
+                const modal = new bootstrap.Modal(document.getElementById('paymentModal'));
+                modal.show();
+                
+                document.getElementById('rzp-button1').onclick = function(e) {
+                    initializePayment(orderData);
+                    e.preventDefault();
+                };
+            }
+        }
+        
+        // Handle payment method change
+        document.addEventListener('change', function(e) {
+            if (e.target.name === 'payment_method') {
+                const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+                let total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+                const codCharges = document.getElementById('cod-charges');
+                const finalTotal = document.getElementById('final-total');
+                
+                if (e.target.value === 'cod') {
+                    codCharges.style.display = 'flex';
+                    total += 50;
+                } else {
+                    codCharges.style.display = 'none';
+                }
+                
+                finalTotal.textContent = '₹' + total.toLocaleString('en-IN');
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,313 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - Cricket Secret</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="logo.png" alt="Cricket Secret" onerror="this.style.display='none'">
+                <strong>Cricket Secret</strong>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="products.html">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+
+                <ul class="navbar-nav">
+                    <li class="nav-item position-relative">
+                        <a class="nav-link" href="cart.html">
+                            <i class="fas fa-shopping-cart"></i> Cart
+                            <span class="cart-badge" id="cart-count" style="display: none;">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container my-5">
+        <div class="quiz-container">
+            <!-- Quiz 1 -->
+            <div class="quiz-step active">
+                <h3>1️⃣ Willow</h3>
+                <ul>
+                    <li><label><input type="radio" name="q1" value="English Willow → ₹23,450"> English Willow → ₹23,450</label></li>
+                    <li><label><input type="radio" name="q1" value="Duo Core Willow → ₹28,999"> Duo Core Willow → ₹28,999</label></li>
+                    <li><label><input type="radio" name="q1" value="Premium English Willow → ₹35,678"> Premium English Willow → ₹35,678</label></li>
+                    <li><label><input type="radio" name="q1" value="Practice Willow → ₹12,345"> Practice Willow → ₹12,345</label></li>
+                </ul>
+                <div class="error-msg"></div>
+                <button class="next-btn">Next</button>
+            </div>
+
+            <!-- Quiz 2 -->
+            <div class="quiz-step">
+                <h3>2️⃣ Practice Types</h3>
+                <ul>
+                    <li><label><input type="radio" name="q2" value="Hitter"> Hitter</label></li>
+                    <li><label><input type="radio" name="q2" value="Classic"> Classic</label></li>
+                    <li><label><input type="radio" name="q2" value="Pro Training"> Pro Training</label></li>
+                </ul>
+                <div class="error-msg"></div>
+                <button class="next-btn">Next</button>
+            </div>
+
+            <!-- Quiz 3 -->
+            <div class="quiz-step">
+                <h3>3️⃣ Handle</h3>
+                <ul>
+                    <li><label><input type="radio" name="q3" value="Short"> Short</label></li>
+                    <li><label><input type="radio" name="q3" value="Long"> Long</label></li>
+                </ul>
+                <div class="error-msg"></div>
+                <button class="next-btn">Next</button>
+            </div>
+
+            <!-- Quiz 4 -->
+            <div class="quiz-step">
+                <h3>4️⃣ Toe Type</h3>
+                <div class="toe-type-options">
+                    <label class="toe-card">
+                        <input type="radio" name="q4" value="Semi Round">
+                        <img src="rounded.png" alt="Semi Round">
+                        <span>Semi Round</span>
+                    </label>
+                    <label class="toe-card">
+                        <input type="radio" name="q4" value="Rounded">
+                        <img src="A.png" alt="Rounded">
+                        <span>Rounded</span>
+                    </label>
+                    <label class="toe-card">
+                        <input type="radio" name="q4" value="Flat">
+                        <img src="flat.png" alt="Flat">
+                        <span>Flat</span>
+                    </label>
+                    <label class="toe-card">
+                        <input type="radio" name="q4" value="Corner Rounded">
+                        <img src="B.png" alt="Corner Rounded">
+                        <span>Corner Rounded</span>
+                    </label>
+                </div>
+                <div class="error-msg"></div>
+                <button class="next-btn">Next</button>
+            </div>
+
+            <!-- Quiz 5 -->
+            <div class="quiz-step">
+                <h3>5️⃣ Handle Type</h3>
+                <div class="handle-type-options">
+                    <label class="handle-card">
+                        <input type="radio" name="q5" value="Round Handle">
+                        <img src="round.png" alt="Round Handle">
+                        <span>Round Handle</span>
+                    </label>
+                    <label class="handle-card">
+                        <input type="radio" name="q5" value="Semi Oval Handle">
+                        <img src="round.png" alt="Semi Oval Handle">
+                        <span>Semi Oval Handle</span>
+                    </label>
+                    <label class="handle-card">
+                        <input type="radio" name="q5" value="Fully Oval Handle">
+                        <img src="round.png" alt="Fully Oval Handle">
+                        <span>Fully Oval Handle</span>
+                    </label>
+                </div>
+                <div class="error-msg"></div>
+                <button class="next-btn">Next</button>
+            </div>
+
+            <!-- Quiz 6 -->
+            <div class="quiz-step">
+                <h3>6️⃣ Weight</h3>
+                <ul>
+                    <li><label><input type="radio" name="q6" value="Light"> Light</label></li>
+                    <li><label><input type="radio" name="q6" value="Well Balanced"> Well Balanced</label></li>
+                    <li><label><input type="radio" name="q6" value="Heavy"> Heavy</label></li>
+                </ul>
+                <div class="error-msg"></div>
+                <button class="next-btn">Next</button>
+            </div>
+
+            <!-- Quiz 7 -->
+            <div class="quiz-step">
+                <h3>7️⃣ Pressing</h3>
+                <ul>
+                    <li><label><input type="radio" name="q7" value="Balanced Press"> Balanced Press</label></li>
+                    <li><label><input type="radio" name="q7" value="Heavy Press"> Heavy Press</label></li>
+                    <li><label><input type="radio" name="q7" value="Fully Pressed"> Fully Pressed</label></li>
+                    <li><label><input type="radio" name="q7" value="Normal Pressed"> Normal Pressed</label></li>
+                </ul>
+                <div class="error-msg"></div>
+                <button class="next-btn">Finish</button>
+            </div>
+            
+                <!-- Quiz 8-->
+            <div class="quiz-step">
+                <h3>8⃣ Sweet Spot Position</h3>
+                <div class="toe-type-options">
+                    <label class="toe-card">
+                        <input type="radio" name="q4" value="Semi Round">
+                        <img src="midlow.png" alt="Semi Round">
+                        <span>Mid-Low</span>
+                    </label>
+                    <label class="toe-card">
+                        <input type="radio" name="q4" value="Rounded">
+                        <img src="low.png" alt="Rounded">
+                        <span>Low</span>
+                    </label>
+                    <label class="toe-card">
+                        <input type="radio" name="q4" value="Flat">
+                        <img src="high.png" alt="Flat">
+                        <span>High</span>
+                    </label>
+               
+                </div>
+                <div class="error-msg"></div>
+                <button class="next-btn">Next</button>
+            </div>
+
+            <!-- Hero Image + Summary -->
+            <div class="quiz-step">
+                <img src="bat1.jpg" alt="Hero" class="hero-img">
+                <h4 class="mt-4">Your Selections:</h4>
+                <ul id="summary-list"></ul>
+                <div class="mt-4">
+                    <a href="product_detail.html?id=1" class="btn btn-primary">View Recommended Product</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5>Cricket Secret</h5>
+                    <p class="text-muted">Crafting premium cricket bats with precision and passion. Your perfect bat awaits.</p>
+                    <div class="social-links">
+                        <a href="#" class="me-3"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="me-3"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Products</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="products.html?category=professional">Professional</a></li>
+                        <li><a href="products.html?category=premium">Premium</a></li>
+                        <li><a href="products.html?category=practice">Practice</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Company</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <h5>Contact Info</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-map-marker-alt me-2"></i>123 Cricket Street, Mumbai, India</li>
+                        <li><i class="fas fa-phone me-2"></i>+91 98765 43210</li>
+                        <li><i class="fas fa-envelope me-2"></i>info@cricketsecret.com</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="mb-0 text-muted">&copy; 2024 Cricket Secret. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-0 text-muted">Made with <i class="fas fa-heart text-danger"></i> for cricket lovers</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/919876543210" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const steps = document.querySelectorAll(".quiz-step");
+            const nextBtns = document.querySelectorAll(".next-btn");
+            let current = 0;
+            let answers = {};
+
+            nextBtns.forEach((btn, index) => {
+                btn.addEventListener("click", () => {
+                    const radios = steps[current].querySelectorAll("input[type='radio']");
+                    const errorMsg = steps[current].querySelector(".error-msg");
+                    let selected = "";
+
+                    radios.forEach(radio => {
+                        if (radio.checked) {
+                            selected = radio.value;
+                        }
+                    });
+
+                    if (!selected) {
+                        errorMsg.textContent = "⚠ Please select one option before proceeding.";
+                        return;
+                    }
+
+                    errorMsg.textContent = "";
+                    answers[`Q${current+1}`] = selected;
+
+                    steps[current].classList.remove("active");
+                    current++;
+
+                    if (current < steps.length) {
+                        steps[current].classList.add("active");
+                    }
+
+                    // Last step -> show summary
+                    if (current === steps.length - 1) {
+                        const summaryList = document.getElementById("summary-list");
+                        summaryList.innerHTML = "";
+                        Object.keys(answers).forEach(q => {
+                            let li = document.createElement("li");
+                            li.textContent = `${q}: ${answers[q]}`;
+                            summaryList.appendChild(li);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
